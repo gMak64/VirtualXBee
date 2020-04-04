@@ -5,6 +5,7 @@ class XBee {
     long nextRead; // Time at which the next character will become available
     long timeBetweenMessages; // Time between incoming pieces of data
     int index; // Used to index into the array of data
+    int maxSize; // Used to stop getting data
 
     void setNextRead() {
       nextRead = millis() + timeBetweenMessages;
@@ -15,6 +16,7 @@ class XBee {
       incomingValuesLength = sl;
       timeBetweenMessages = tbm;
       index = -1;
+      maxSize = 3;
       nextRead = millis() + initDelay; // delay first message
     }
 
@@ -39,11 +41,12 @@ class XBee {
     }
 
     int read () {
-      if (available() > 0) {
-  int noSend = random(10);
-  if (noSend == 7) {
-    incomingValues[3] = incomingValues[0];
-  }
+      if (available() > 0 && index < maxSize) {
+        int noSend = random(10);
+        if (noSend == 7) {
+         incomingValues[3] = incomingValues[0];
+         maxSize = 2;
+        }
         setNextRead();
         index++;
         return incomingValues[index];
