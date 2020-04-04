@@ -25,7 +25,7 @@ The second method is called with:
 ```arduino
 xb.read()
 ```
-This will return, at random, one of the five communication codes from the other bot if data is available. If not, then a **-1** will be returned.
+This will return, at random, one of the five communication codes from the other bot if data is available. If not, then a **-1** will be returned. Because this is random, you should take special care to have 5 unique values before you do your final calculation.
 
 ## Data Processing
 The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
@@ -41,7 +41,7 @@ The continent is a binary representation of that continent's integer, while the 
 * Continent 3, Object Far
 * Continent 4, Object Close
 * Continent 6, Object Far
-You should initialize the xbee as
+You should initialize the XBee as
 ```arduino
   byte INCOMING[5] = {0x01, 0x02, 0x05, 0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
