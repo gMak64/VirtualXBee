@@ -35,7 +35,7 @@ The data will be initialized as a two bit hexadecimal number. The Least Signific
    |       |                |
   Waste  (Continent)  (Object Distance)
 ```
-The continent is a binary representation of that continent's integer, while the object distance represents whether or not an object is close. Refer to the IDC documentation for how specific things are represented. As an example, say you are simulating a round where you are on continet 5, and the other bots are telling you:
+The continent is a binary representation of that continent's integer, while the object distance represents whether or not an object is close. Refer to the IDC documentation for how specific things are represented. As an example, say you are simulating a round where you are on continent 5, and the other bots are telling you:
 * Continent 1, Object Far
 * Continent 2, Object Close
 * Continent 3, Object Far
