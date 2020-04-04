@@ -12,7 +12,7 @@ This will create a set of placeholder data, and an XBee object called xb. For th
 byte INCOMING[4] = {0x00, 0x01, 0x02, 0x03};
 XBee xb(INCOMING, sizeof(INCOMING), initDelay, tbm);
 ```
-**initDelay** is a time in milliseconds which allows you to set the initial delay time, and **tbm** is a time in milliseconds wich allows you to set the minimum waiting period between successive receives. Both of these are of the type *long*.
+**initDelay** is a time in milliseconds which allows you to set the initial delay time, and **tbm** is a time in milliseconds wich allows you to set the minimum waiting period between successive receives. Both of these are of the type *long*. The delay times are meant to simulate each of the bots doing their IDC tasks before sending out the information they received. Since each bot moves at a different speed, and may not complete their task at the same time, this delay is included to be more representative of what may be happening in real life.
 
 ## Methods
 There are two methods that you will need to implement. The first is called with
@@ -25,7 +25,7 @@ The second method is called with:
 ```arduino
 xb.read()
 ```
-This will return, at random, one of the five communication codes from the other bot if data is available. If not, then a **-1** will be returned. Because this is random, you should take special care to have 5 unique values before you do your final calculation.
+This will return, at random, one of the four communication codes from the other bot if data is available. If not, then a **-1** will be returned. Think about how you will store this information. Furthermore, because this is random, you should take special care to have 4 unique values before you do your final calculation.
 
 ## Data Processing
 The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
