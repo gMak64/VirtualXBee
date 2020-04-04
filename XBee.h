@@ -109,3 +109,9 @@ class XBee {
 
   No other software serial library methods are implemented
   ---------------------------------------------------------------
+  Created 2 April 2020
+	By Trishul Nagenalli
+	Modified 3 April 2020
+	By Grant Mak
+*/ 
+
