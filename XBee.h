@@ -115,3 +115,12 @@ class XBee {
   By Grant Mak
 */ 
 
+void setup()
+{
+  randomSeed(analogRead(0));
+}
+
+void loop()
+{
+}
+
