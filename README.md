@@ -43,6 +43,6 @@ The continent is a binary representation of that continent's integer, while the 
 
 You should initialize the XBee as
 ```arduino
-  byte INCOMING[4] = {0x01, 0x02,0x06, 0x0B};
+  byte INCOMING[4] = {0x01, 0x02, 0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
