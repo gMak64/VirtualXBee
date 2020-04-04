@@ -1,5 +1,5 @@
 # VirtualXBee
-This class mimics the read functionality of the XBees you worked with in class.
+This class mimics the read functionality of the XBees you worked with in class. A user-intialized array represents the sensing codes from the 4 other bots in your IDC team. From there, you can read from the array at a constant time interval to simulate reading from Software Serial and grabbing those values to your own Arduino.
 
 ## Initialization 
 To create an XBee object, you should call the constructor in the following manner:
@@ -46,3 +46,6 @@ You should initialize the XBee as
   byte INCOMING[4] = {0x01, 0x02, 0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
+## Authors
+Trishul Naganelli
+Grant Mak
