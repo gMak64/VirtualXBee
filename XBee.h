@@ -1,4 +1,3 @@
-
 class XBee {
   private:
     byte* incomingValues; // Byte array of all possible incoming values
@@ -20,7 +19,7 @@ class XBee {
     }
 
   public:
-    XBee(byte* s, int sl, long initDelay, long tbm )
+    XBee(byte* s, int sl, long initDelay, long tbm)
     {
       initialize(s, sl, initDelay, tbm);
     }
@@ -41,10 +40,10 @@ class XBee {
 
     int read () {
       if (available() > 0) {
-	int noSend = random(20);
-	if (noSend == 17) {
-	  incomingValues[3] = incomingValues[0];; 
-	}
+  int noSend = random(20);
+  if (noSend == 17) {
+    incomingValues[3] = incomingValues[0];
+  }
         setNextRead();
         index++;
         return incomingValues[index];
@@ -53,6 +52,7 @@ class XBee {
       }
     }
 };
+
 
 /*
 
