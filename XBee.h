@@ -56,7 +56,7 @@ class XBee {
   worked with in class. Initialize the XBee as below:
 
   ``
-  byte INCOMING[5] = {0x00, 0x01, 0x02, 0x03, 0x04};
+  byte INCOMING[4] = {0x00, 0x01, 0x02, 0x03};
   XBee xb(INCOMING, sizeof(INCOMING));
   ``
 
@@ -70,7 +70,7 @@ class XBee {
   If you would like to change this, initialize the XBee as below
 
   ``
-  byte INCOMING[5] = {0x00, 0x01, 0x02, 0x03, 0x04};
+  byte INCOMING[4] = {0x00, 0x01, 0x02, 0x03};
   XBee xb(INCOMING, sizeof(INCOMING), initDelay, timeBetweenMessages);
   ``
 
@@ -103,30 +103,3 @@ class XBee {
 
   No other software serial library methods are implemented
   ---------------------------------------------------------------
-
-  Suggested Communication Protocol
-
-  Dissect a byte as:
-
-   0000     010              1
-  |____|   |___|            |_|
-   |       |                |
-  Waste  (Continent)  (Object Distance)
-
-  If you want to initialize a round where you are on
-  continent 5 and the other bots are telling you
-
-  Continent 1, Object Far
-  Continent 2, Object Close
-  Continent 3, Object Far
-  Continent 4, Object Close
-  Continent 6, Object Far
-
-  Initialize the xbee as
-
-  ``
-  byte INCOMING[5] = {0x01, 0x02, 0x05, 0x06, 0x0B};
-  XBee xb(INCOMING, sizeof(INCOMING));
-  ``
-
-*/
