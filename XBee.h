@@ -106,7 +106,7 @@ class XBee {
 
   Suggested Communication Protocol
 
-  Dissect a byte as
+  Dissect a byte as:
 
    0000     010              1
   |____|   |___|            |_|
