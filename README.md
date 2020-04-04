@@ -48,4 +48,5 @@ You should initialize the XBee as
 ```
 ## Authors
 Trishul Naganelli
+
 Grant Mak
