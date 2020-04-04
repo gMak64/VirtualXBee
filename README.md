@@ -25,7 +25,7 @@ The second method is called with:
 ```arduino
 xb.read()
 ```
-This will return, at random, one of the four communication codes from the other bot if data is available. If not, then a **-1** will be returned. Think about how you will store this information. Furthermore, because this is random, you should take special care to have 4 unique values before you do your final calculation. The randomness is included to emulate complications that can arise in a physical IDC demonstration.
+This will return, in succession, one of the four communication codes from the other bot if data is available. If not, then a **-1** will be returned. Think about how you will store this information, taking special care to have 4 unique values before you do your final calculation. There is a random chance that data is lost and you are not able to receive all 4 values. This is done to emulate real life complications, and as such, you should have a timeout method to prevent an infinite loop of doing nothing.
 
 ## Data Processing
 The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
