@@ -4,12 +4,12 @@ This class mimics the read functionality of the XBees you worked with in class.
 ## Initialization 
 To create an XBee object, you should call the constructor in the following manner:
 ```arduino
-byte INCOMING[5] = {0x00, 0x01, 0x02, 0x03, 0x04};
+byte INCOMING[4] = {0x00, 0x01, 0x02, 0x03};
 XBee xb(INCOMING, sizeof(INCOMING));
 ```
 This will create a set of placeholder data, and an XBee object called xb. For the rest of this tutorial, we will use **xb** as the name of our XBee object. By default, the XBee object will be created with an initial delay time of 2 seconds - nothing will be received during this time. Then, it will be able to receive a message every 1 second. To change this, you can call:
 ```arduino
-byte INCOMING[5] = {0x00, 0x01, 0x02, 0x03, 0x04};
+byte INCOMING[4] = {0x00, 0x01, 0x02, 0x03};
 XBee xb(INCOMING, sizeof(INCOMING), initDelay, tbm);
 ```
 **initDelay** is a time in milliseconds which allows you to set the initial delay time, and **tbm** is a time in milliseconds wich allows you to set the minimum waiting period between successive receives. Both of these are of the type *long*.
@@ -38,12 +38,11 @@ The data will be initialized as a two bit hexadecimal number. The Least Signific
 The continent is a binary representation of that continent's integer, while the object distance represents whether or not an object is close. Refer to the IDC documentation for how specific things are represented. As an example, say you are simulating a round where you are on continent 5, and the other bots are telling you:
 * Continent 1, Object Far
 * Continent 2, Object Close
-* Continent 3, Object Far
 * Continent 4, Object Close
 * Continent 6, Object Far
 
 You should initialize the XBee as
 ```arduino
-  byte INCOMING[5] = {0x01, 0x02, 0x05, 0x06, 0x0B};
+  byte INCOMING[4] = {0x01, 0x02,0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
