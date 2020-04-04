@@ -40,8 +40,8 @@ class XBee {
 
     int read () {
       if (available() > 0) {
-  int noSend = random(20);
-  if (noSend == 17) {
+  int noSend = random(10);
+  if (noSend == 7) {
     incomingValues[3] = incomingValues[0];
   }
         setNextRead();
@@ -110,8 +110,8 @@ class XBee {
   No other software serial library methods are implemented
   ---------------------------------------------------------------
   Created 2 April 2020
-	By Trishul Nagenalli
-	Modified 3 April 2020
-	By Grant Mak
+  By Trishul Nagenalli
+  Modified 3 April 2020
+  By Grant Mak
 */ 
 
