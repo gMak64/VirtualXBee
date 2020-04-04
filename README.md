@@ -14,6 +14,8 @@ XBee xb(INCOMING, sizeof(INCOMING), initDelay, tbm);
 ```
 **initDelay** is a time in milliseconds which allows you to set the initial delay time, and **tbm** is a time in milliseconds wich allows you to set the minimum waiting period between successive receives. Both of these are of the type *long*. The delay times are meant to simulate each of the bots doing their IDC tasks before sending out the information they received. Since each bot moves at a different speed, and may not complete their task at the same time, this delay is included to be more representative of what may be happening in real life.
 
+This should be called after the Xbee.h code, outside of any loops (i.e. a global variable).
+
 ## Methods
 There are two methods that you will need to implement. The first is called with
 ```arduino
