@@ -41,6 +41,7 @@ The continent is a binary representation of that continent's integer, while the 
 * Continent 3, Object Far
 * Continent 4, Object Close
 * Continent 6, Object Far
+
 You should initialize the XBee as
 ```arduino
   byte INCOMING[5] = {0x01, 0x02, 0x05, 0x06, 0x0B};
