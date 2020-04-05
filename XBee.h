@@ -39,7 +39,7 @@ class XBee {
     }
 
     int read () {
-      if (available() > 0 && index < maxSize) {
+      if (available() > 0 && index < 3) {
         int noSend = random(10);
         if (noSend == 7) {
          incomingValues[3] = incomingValues[0];
