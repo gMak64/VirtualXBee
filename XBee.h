@@ -115,6 +115,9 @@ class XBee {
   By Grant Mak
 */ 
 
+byte INCOMING[4] = {0x04, 0x08, 0x0A, 0x0C};
+XBee xb(INCOMING, sizeof(INCOMING));
+
 void setup()
 {
   randomSeed(analogRead(0));
