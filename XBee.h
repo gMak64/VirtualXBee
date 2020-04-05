@@ -40,7 +40,7 @@ class XBee {
 
     int read () {
       if (available() > 0 && index < 3) {
-        int noSend = random(20);
+        int noSend = random(15);
         if (noSend == 7) {
          incomingValues[3] = incomingValues[0];
         }
