@@ -48,6 +48,8 @@ You should initialize the XBee as
   byte INCOMING[4] = {0x01, 0x02, 0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
+When you read the data, it will return it to you in integer format. Think about some clever math operations you can use to get the info you need out of those integers.
+
 ## Authors
 Trishul Naganelli
 
