@@ -30,7 +30,7 @@ xb.read()
 This will return, in succession, one of the four communication codes from the other bot if data is available. If not, then a **-1** will be returned. Think about how you will store this information, taking special care to have 4 unique values before you do your final calculation. There is a random chance that data is lost and you are not able to receive all 4 values. This is done to emulate real life complications, and as such, you should have a timeout method to prevent an infinite loop of doing nothing.
 
 ## Data Processing
-The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
+The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary to get the information you need - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
 ```arduino
    0000     010              0
   |____|   |___|            |_|
@@ -48,7 +48,7 @@ You should initialize the XBee as
   byte INCOMING[4] = {0x01, 0x02, 0x06, 0x0B};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
-When you read the data, it will return it to you in integer format. Think about some clever math operations you can use to get the info you need out of those integers.
+When you read the data, it will return it to you in integer format, but again, the binary representation will be more telling of that that number represents. Think about some clever math operations you can use to get the info you need out of those integers.
 
 ## Authors
 Trishul Naganelli
