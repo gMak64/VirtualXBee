@@ -45,7 +45,7 @@ The continent is a binary representation of that continent's integer, while the 
 
 You should initialize the XBee as
 ```arduino
-  byte INCOMING[4] = {0x02, 0x05, 0x09, 0x0B};
+  byte INCOMING[4] = {0x02, 0x05, 0x09, 0x0C};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
 When you read the data, it will return it to you in integer format, but again, the binary representation will be more telling of that that number represents. Think about some clever math operations you can use to get the info you need out of those integers.
