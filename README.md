@@ -17,7 +17,7 @@ XBee xb(INCOMING, sizeof(INCOMING), initDelay, tbm);
 This should be called after the Xbee.h code, outside of any loops (i.e. a global variable).
 
 ## Methods
-There are two methods that you will need to implement. The first is called with
+There are two methods that have been implemented for you that you will need to call. The first is called with
 ```arduino
 xb.available()
 ```
@@ -30,7 +30,7 @@ xb.read()
 This will return, in succession, one of the four communication codes from the other bot if data is available. If not, then a **-1** will be returned. Think about how you will store this information, taking special care to have 4 unique values before you do your final calculation. There is a random chance that data is lost and you are not able to receive all 4 values. This is done to emulate real life complications, and as such, you should have a timeout method to prevent an infinite loop of doing nothing.
 
 ## Data Processing
-The data will be initialized as a two bit hexadecimal number. The Least Significant Bit (the rightmost number) will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. You will be responsible for converting this into a format that your Arduino can process. It is recommended that you convert each of these codes from hexadecimal to binary to get the information you need - there are many resources online if you do not know how to do this. Once you have turned your code into binary, you can dissect it as such:
+The data will be initialized in the `INCOMING` array as four two-bit hexadecimal numbers (or "codes"). When you read in one code, it will return it to you as an integer, as noted above. But, to help you understand what's going on, it is recommended that you try converting (with pen and paper) a few of these codes from hexadecimal to binary - Google is your friend for this. The Least Significant Bit (the rightmost number) of each code will have the relevant information, while the Most Significant Bit (the leftmost number) will have no information. Once you have turned your code into binary, you can dissect it as such:
 ```arduino
    0000     010              0
   |____|   |___|            |_|
@@ -43,12 +43,12 @@ The continent is a binary representation of that continent's integer, while the 
 * Continent 4, Object Close
 * Continent 6, Object Far
 
-You should initialize the XBee as
+In this example, you should initialize the XBee as
 ```arduino
   byte INCOMING[4] = {0x02, 0x05, 0x09, 0x0C};
   XBee xb(INCOMING, sizeof(INCOMING));
 ```
-When you read the data, it will return it to you in integer format, but again, the binary representation will be more telling of that that number represents. Think about some clever math operations you can use to get the info you need out of those integers.
+Now that you understand the binary behind how the integers are representing the codes, think about some clever math operations you can use to separate out the info you need from those integers.
 
 ## Authors
 Trishul Naganelli
